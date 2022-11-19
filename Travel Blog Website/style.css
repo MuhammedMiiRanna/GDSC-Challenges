@@ -2,20 +2,31 @@
 *::after,
 *::before {
   box-sizing: border-box;
-  /* border: 2px solid black; */
+  /* border: 1px solid black; */
 }
 
 :root {
   font-size: 62.5%;
 
   --link-color: rgb(60, 98, 170);
+  --primary-btn-color: rgb(58, 79, 158);
+  --primary-btn-color-hover: rgb(34, 49, 101);
+  --hover-ice: rgb(143, 203, 255);
+
+  --global-max-width: 1480px;
+  --card-img-width: 345px;
+  --card-img-height: 220px;
 }
 
 body {
+  color: #777;
   font-size: 1.6rem;
   font-family: "Alte Haas Grotesk", "Open Sans", system-ui, -apple-system,
     BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
     "Open Sans", "Helvetica Neue", sans-serif;
+  display: relative;
+  width: 100%;
+  max-width: var(--global-max-width);
 }
 
 /* General classes */
@@ -30,6 +41,10 @@ body {
 .inline-block-display {
   display: inline-block;
 }
+.inline-display {
+  display: inline-block;
+}
+
 .block-display {
   display: block;
 }
@@ -44,6 +59,42 @@ body {
   /* display: table; */
 }
 
+img {
+  width: 100%;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+/* Typography */
+
+#title-quote {
+  font-size: 2.5rem;
+}
+
+/* #main-heading {
+  margin: 0px;
+} */
+
+h1 {
+  font-size: 6rem;
+}
+
+h2 {
+  font-size: 3.5rem;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0px;
+}
+
 /* Links */
 a {
   font-style: normal;
@@ -54,21 +105,38 @@ a {
 .address-link {
   font-size: 2rem;
   text-align: center;
+  vertical-align: middle;
+  line-height: 100px;
   color: var(--link-color);
-  padding: 4rem 2rem;
-  transform: rotate(-90deg);
+  height: 100px;
+  width: 100%;
+  /* margin: 0 80px; */
+  /* padding: 5rem 2rem; */
+  /* transform: rotate(-0.25turn); */
+  /* transform: rotate(-0.25turn); */
+  /* transition: color 0.7s; */
+  transition: color 0.7s, background-color 0.7s, padding-left 0.7s;
 }
 
+.address-link:hover {
+  /* color: rgb(143, 203, 255); */
+
+  color: var(--hover-ice);
+  background-color: var(--primary-btn-color-hover);
+  padding-left: 40px;
+}
 /*  */
-.nav-bar {
-  background: rgba(255, 255, 255, 0.5);
-  box-shadow: 0px 0px 1rem 1rem rgb(255, 255, 255, 0.5);
-  width: 100vw;
-  height: 20vh;
-  padding: 1rem;
+.header {
   position: absolute;
   top: 0;
-
+  z-index: 9;
+  background: rgba(255, 255, 255, 0.34);
+  /* box-shadow: 0px 0px 1rem 1rem rgb(255, 255, 255, 0.5); */
+  box-shadow: 0 30px 23px 2px rgba(255, 255, 255, 0.34);
+  width: 100%;
+  max-width: var(--global-max-width);
+  height: 10rem;
+  padding: 3rem 5rem;
   /* offset-x | offset-y | blur-radius | spread-radius | color
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   inset | offset-x | offset-y | color 
@@ -76,36 +144,269 @@ a {
   */
 }
 
+/* .nav-bar {
+} */
+
 .main-container {
   display: flex;
   flex-direction: row;
 }
+
 .address-container {
   height: 100%;
+  width: 100%;
   padding-top: 20rem;
 }
+
 .side-bar {
-  min-width: 100px;
+  min-width: 160px;
+  max-width: 20vh;
   height: 100%;
 }
+
 @media screen and (max-width: 720px) {
   .side-bar {
     display: none;
   }
 }
 
-/* .main-content {
-  height: 100vh;
-  background-image: url("../images/forest-nature-landscape-winter-lake-snow.jpg");
+/* TODO: check this */
+/* TODO: also, add some effect lel nav-bar */
+/* #intro-title {
+} */
+
+#title-quote {
+  margin: 0px;
+  font-size: 2.5rem;
+}
+
+#main-heading {
+  margin: 0px;
+  font-size: 6rem;
+}
+
+#main-content {
+  color: #ddd;
+  box-shadow: 0 -45px 45px 11px rgba(255, 255, 255, 0.96) inset;
+  background-image: url("images/background-forest-nature-landscape-winter-lake-snow.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-} */
+  /* background-position: bottom 50px right 100px; */
+  padding: 18rem 8rem 4rem;
+  margin: 0 0 8rem;
+  min-height: 710px;
+  height: 90vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
 
-/*  */
+#landing-sec {
+  padding: 4rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+#locations-images {
+  /* position: relative;
+  left: 60%; */
+  position: absolute;
+  right: -5%;
+}
+
+.landing-sec-img {
+  margin: 10px;
+  height: 150px;
+  width: 220px;
+  object-fit: cover;
+}
+
+/* form components */
+#booking-form {
+  /* display: block; */
+  background-color: rgba(255, 255, 255, 0.3);
+  margin: 4rem 0;
+  height: 120px;
+  width: auto;
+  display: inline-flex;
+  align-items: center;
+}
+
+.form-component {
+  margin: 0 1.5rem;
+}
+
+input[type="text"],
+input[type="email"] {
+  border-bottom: 2px solid grey;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  outline: none;
+}
+/* Buttons */
+.btn {
+  border: none;
+  outline: none;
+  /* outline: none; */
+  transition: background-color 0.7s, color 0.7s;
+}
+.btn-primary {
+  color: white;
+  background-color: var(--primary-btn-color);
+}
+.btn-secondary {
+  color: black;
+  background-color: #ddd;
+}
+
+.btn:hover {
+  cursor: pointer;
+  color: var(--hover-ice);
+  background-color: var(--primary-btn-color-hover);
+}
+
+.booking-btn {
+  padding: 0 3rem;
+  height: 100%;
+}
+
+.planning-btn {
+  background-color: var(--primary-btn-color);
+  padding: 2rem 3rem;
+  border-radius: 5px;
+  letter-spacing: 4px;
+
+  box-shadow: 0px 16px 58px -5px rgba(0, 0, 0, 0.41);
+  -webkit-box-shadow: 0px 16px 58px -5px rgba(0, 0, 0, 0.41);
+  -moz-box-shadow: 0px 16px 58px -5px rgba(0, 0, 0, 0.41);
+}
+
+#planning {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+}
+
+.planning-card {
+  line-height: 2.5rem;
+  min-width: 280;
+  max-width: 500px;
+  padding: 4.5rem 2rem;
+  /* margin: 1.5rem; */
+  flex-shrink: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.shadow-card {
+  border-radius: 5px;
+  margin: 20px;
+
+  box-shadow: 2px 16px 58px -5px rgba(0, 0, 0, 0.41);
+  -webkit-box-shadow: 2px 16px 58px -5px rgba(0, 0, 0, 0.41);
+  -moz-box-shadow: 2px 16px 58px -5px rgba(0, 0, 0, 0.41);
+}
+
+/* TODO: DRY, uk, chof m3a letter spacing and line-height bah mayet3awdoch */
+#recommendations {
+  letter-spacing: 4px;
+}
+
+#recommendation-card-pack-1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.recommendation-card-1 {
+  width: var(--card-img-width);
+  /* height: ; */
+}
+
+/* TODO: NEXTTIME: 
+  fix the responsive layout
+  fix the shadow-box */
+.recommendation-card-1 img,
+.recommendation-card-3 img {
+  height: var(--card-img-height);
+  object-fit: cover;
+}
+
+.recommendation-card-1 div,
+.recommendation-card-3 div {
+  padding: 1rem;
+}
+
+#recommendation-card-pack-2 {
+  margin: 7rem 0;
+}
+
+#recommendation-card-pack-3 {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.recommendation-card-3 {
+  margin: 0 15px;
+}
+
+#subscribe {
+  background-color: var(--primary-btn-color);
+  padding: 3rem 4rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#subscribe #subscribe-form {
+  width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#subscribe h2 {
+  color: #ddd;
+  /* padding-right: 8rem; */
+}
+#subscribe input[type="email"] {
+  background-color: rgba(255, 255, 255, 0.2);
+  /* /* padding-right: 10rem; */
+  padding-left: 1rem;
+  flex-grow: 1.5;
+  max-width: 50%;
+}
+#subscribe #email::placeholder {
+  color: #ddd;
+}
+#subscribe input[type="submit"] {
+  background-color: white;
+  text-align: center;
+  /* padding-right: 7rem;
+  padding-left: 7rem; */
+  flex-grow: 1;
+  max-width: 35%;
+}
+
+#subscribe input[type="submit"],
+#subscribe input[type="email"] {
+  letter-spacing: 0.2rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  margin: 10px;
+  border-radius: 5px;
+  max-width: 100%;
+}
+
 /* Typography */
 /* Badges */
 /* Lists */
 /* Icons */
-/* Buttons */
 /* Inputs */
