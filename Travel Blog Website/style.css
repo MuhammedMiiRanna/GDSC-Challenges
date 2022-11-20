@@ -198,7 +198,8 @@ a {
 /* .nav-bar {
 } */
 
-#main-container {
+#main-container,
+#width-fix {
   display: flex;
   flex-direction: row;
 }
