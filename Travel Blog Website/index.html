@@ -14,6 +14,14 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../General Resources/normalize.css">
     <title>Travel Blog</title>
+    <style>
+        *,
+        *::after,
+        *::before {
+            box-sizing: border-box;
+            border: 1px solid black;
+        }
+    </style>
 </head>
 
 <body>
@@ -23,7 +31,7 @@
             <i class="fa-solid fa-magnifying-glass float_right inline-block"></i>
         </nav>
     </header>
-    <main class="main-container">
+    <main id="main-container">
         <aside class="side-bar">
             <address class="address-container">
                 <a href="instagram.com" target="_blank" class="address-link block-display">Instagram</a>
@@ -35,173 +43,197 @@
             <!-- TODO: give max width to main container
             give max-width of nav-bar a value of 100% which 100% of its container li howa main  -->
             <article id="main-content">
-                <div id="intro-title">
-                    <p id="title-quote">Book your desired travel place</p>
-                    <h1 class="capitalize" id="main-heading">travel for life</h1>
-                </div>
+                <section id="landing-sec">
+                    <div id="intro-title">
+                        <p>Book your desired travel place</p>
+                        <h1 class="capitalize">travel for life</h1>
+                    </div>
 
-                <form action="" method="post" onsubmit="return false" id="booking-form" class="inline-block-display">
-                    <div class="inline-block-display form-component">
-                        <label for="from" class="block-display">From</label>
-                        <input type="text" name="from" id="from">
-                    </div>
-                    <div class="inline-block-display form-component">
-                        <label for="to" class="block-display">To</label>
-                        <input type="text" name="to" id="to">
-                    </div>
-                    <div class="inline-block-display form-component">
-                        <label for="travelDate" class="block-display">Travel Date</label>
-                        <input type="text" name="travelDate" id="travelDatee">
-                    </div>
-                    <input type="submit" value="Book Now" class="btn booking-btn">
-                </form>
+                    <form action="" method="post" onsubmit="return false" id="booking-form">
+                        <div class="inline-block-display form-component">
+                            <label for="from" class="block-display">From</label>
+                            <input type="text" name="from" id="from">
+                        </div>
+                        <div class="inline-block-display form-component">
+                            <label for="to" class="block-display">To</label>
+                            <input type="text" name="to" id="to">
+                        </div>
+                        <div class="inline-block-display form-component">
+                            <label for="travelDate" class="block-display">Travel Date</label>
+                            <input type="text" name="travelDate" id="travelDatee">
+                        </div>
+                        <input type="submit" value="Book Now" class="btn btn-primary booking-btn">
+                    </form>
 
-                <div id="locations-images" class="block-display ">
-                    <img src="images/snow forest lake.jpeg" alt="picture of snow in the forest and a lake"
-                        class="landing-sec-img">
-                    <img src="images/mountains lake.jpg" alt="picture of mountains and a lake" class="landing-sec-img">
-                    <img src="images/lake mountains 2.jpg" alt="picture of lake and mountains" class="landing-sec-img">
-                </div>
+                    <div id="">
+                        <img src="images/snow forest lake.jpeg" alt="pictures of snow in the forest and a lake"
+                            class="landing-sec-img">
+                        <img src="images/lake mountains 2.jpg" alt="" class="landing-sec-img">
+                        <img src="images/lake snow mountains sky background.jpg" alt="" class="landing-sec-img">
+                    </div>
+                </section>
             </article>
 
             <article>
-                <section id="planning">
-                    <div id="" class="planning-card">
-                        <div>
-                            <!-- i put this here to make all inside element in one div, 
-                            also to to avoid giving the button all the horizontal space -->
-                            <h2 class="capitalize">Planning Your Tours</h2>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam laborum ab, eos
-                                sequi
-                                nisi
-                                totam recusandae maiores id vel modi molestiae sunt quam adipisci voluptatem maxime
-                                voluptatum!
-                            </p>
-                            <button class="btn caps-lock planning-btn inline-display">discover more</button>
-                        </div>
-                    </div>
 
-                    <div>
-                        <div class="planning-card shadow-card">
-                            <h3 class="capitalize">live poker how to win tournament games</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis consequuntur sed modi
-                                quis
-                                olestiae optio tempore, dolor asperiores dolorum.
-                            </p>
+                <div id="secondary-content">
+                    <section id="planning">
+                        <div id="planning-card-offer" class="planning-card">
+                            <div>
+                                <!-- i put this here to make all inside element in one div,
+                                also to to avoid giving the button all the horizontal space -->
+                                <h2 class="capitalize">Planning Your Tours</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam laborum ab, eos
+                                    sequi nisi
+                                    totam recusandae
+                                    maiores id vel modi molestiae sunt
+                                    quam adipisci voluptatem maxime
+                                    voluptatum!
+                                </p>
+                                <button class="btn btn-primary planning-btn caps-lock inline-display">discover
+                                    more</button>
+                            </div>
                         </div>
-                        <div class="planning-card">
-                            <h3 class="capitalize">trip to iqaluit in numavut a canadian arctic city</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis consequuntur sed modi
-                                quis
-                                molestiae optio tempore, dolor asperiores dolorum.
-                            </p>
+                        <div>
+                            <div class="planning-card shadow-card">
+                                <h3 class="capitalize">live poker how to win tournament games</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis consequuntur sed
+                                    modi
+                                    quis
+                                    olestiae optio tempore, dolor asperiores dolorum.
+                                </p>
+                            </div>
+                            <div class="planning-card">
+                                <h3 class="capitalize">trip to iqaluit in numavut a canadian arctic city</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis consequuntur sed
+                                    modi
+                                    quis
+                                    molestiae optio tempore, dolor asperiores dolorum.
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
+                    <section id="recommendations">
+                        <h2 class="capitalize">our recommendations</h2>
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                            <br>
+                            Velit quod corporis unde rerum doloribus.
+                        </p>
+                        <!--  -->
+                        <div id="recommendation-card-pack-1">
+                            <div class="recommendation-card-1">
+                                <img src="images/hanoi mountains.jpg" alt="a picture of hanoi mountain">
+                                <div>
+                                    <h3 class="capitalize">hanoi</h3>
+                                    <p>
+                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas, magnam.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="recommendation-card-1">
+                                <img src="images/Mount Everest.jpg" alt="picture of everest mountain">
+                                <div>
+                                    <h3 class="capitalize">riverdale</h3>
+                                    <p>
+                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas, magnam.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="recommendation-card-1">
+                                <img src="images/raleigh mountains.jpg" alt="a picture of raleigh mountains">
+                                <div>
+                                    <h3 class="capitalize">raleigh </h3>
+                                    <p>
+                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas, magnam.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="recommendation-card-pack-2">
+                            <img src="images/Lake Braies copy.jpg" alt="">
+                        </div>
+                        <div id="recommendation-card-pack-3">
+                            <div class="recommendation-card-3">
+                                <img src="images/coniferous trees.jpg" alt="a picture of coniferous trees in america">
+                                <div>
+                                    <h3 class="capitalize">choose the perfect accomodations</h3>
+                                    <span><i class="fa-solid fa-eye"></i> 203 view</span>
+                                    <span><i class="fa-solid fa-comments"></i> 26 comments</span>
+                                    <p>
+                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi at obcaecati
+                                        ipsum
+                                        odio,
+                                        doloremque perferendis dolore id. Debitis ex ab sed eligendi officiis.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="recommendation-card-3">
+                                <img src="images/river.jpeg" alt="a picture of a vale">
+                                <div>
+                                    <h3>do a sporting do in birmingham </h3>
+                                    <span><i class="fa-solid fa-eye"></i> 292 views</span>
+                                    <span><i class="fa-solid fa-comments"></i> 13 comments</span>
+                                    <p>
+                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi at obcaecati
+                                        ipsum
+                                        odio,
+                                        doloremque perferendis dolore id. Debitis ex ab sed eligendi officiis.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="subscribe">
+                        <h2 class="capitalize inline-block-display">subscribe us</h2>
+                        <form action="" onsubmit="return false" id="subscribe-form" class="block-display">
+                            <input type="email" name="email" id="email" placeholder="ENTER YOUR EMAIL">
+                            <input type="submit" value="subscribe" class="btn btn-secondary caps-lockn">
+                        </form>
+                    </section>
+                </div>
 
-                <section id="recommendations">
-                    <h2 class="capitalize">our recommendations</h2>
-                    <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                        <br>
-                        Velit quod corporis unde rerum doloribus.
-                    </p>
-                    <div>
-                        <div>
-                            <img src="" alt="">
-                            <h3 class="capitalize">hanoi</h3>
-                            <p>
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas, magnam.
-                            </p>
-                        </div>
-                        <div>
-                            <img src="" alt="">
-                            <h3 class="capitalize">riverdale</h3>
-                            <p>
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas, magnam.
-                            </p>
-                        </div>
-                        <div>
-                            <img src="" alt="">
-                            <h3 class="capitalize">raleigh </h3>
-                            <p>
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas, magnam.
-                            </p>
-                        </div>
-                    </div>
-                    <div>
-                        <img src="" alt="">
-                    </div>
-                    <div>
-                        <div>
-                            <img src="" alt="">
-                            <h3 class="capitalize">choose the perfect accomodations</h3>
-                            <span><i class="fa-solid fa-eye"></i> 203 view</span>
-                            <span><i class="fa-solid fa-comments"></i> 26 comments</span>
-                            <p>
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi at obcaecati ipsum odio,
-                                doloremque perferendis dolore id. Debitis ex ab sed eligendi officiis.
-                            </p>
-                        </div>
-                        <div>
-                            <img src="" alt="">
-                            <h3>do a sporting do in birmingham </h3>
-                            <span><i class="fa-solid fa-eye"></i> 292 views</span>
-                            <span><i class="fa-solid fa-comments"></i> 13 comments</span>
-                            <p>
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi at obcaecati ipsum odio,
-                                doloremque perferendis dolore id. Debitis ex ab sed eligendi officiis.
-                            </p>
-                        </div>
-                    </div>
-
-                </section>
-
-                <section id="subscribe">
-                    <h2 class="capitalize">subscribe us</h2>
-                    <form action="" onsubmit="return false">
-                        <input type="email" name="email" id="email" placeholder="ENTER YOUR EMAIL">
-                        <input type="submit" value="subscribe" class="caps-lock">
-                    </form>
-                </section>
             </article>
+
+            <!-- i put the footer in here, 
+            last time the footer was the last element -->
+            <footer id="footer-element" class="capitalize">
+                <ul class="footer-list">
+                    <h2>UINugget</h2>
+                    <li>privacy policy</li>
+                    <li>&copy; UINugget copyrights</li>
+                </ul>
+                <ul class="footer-list">
+                    <h3>menu</h3>
+                    <li>about</li>
+                    <li>care center</li>
+                    <li>service</li>
+                </ul>
+                <ul class="footer-list">
+                    <h3 id="empty-heading">&nbsp;</h3>
+                    <li>prefrences</li>
+                    <li>Executions</li>
+                </ul>
+                <div id="footer-contacts">
+                    <h3>contact us</h3>
+                    <address>
+                        <a href="mailto:jim@rock.com" class="inline-display">jim@rock.com</a>
+                        &nbsp;
+                        <a href="tel:+13115552368" class="inline-display">(311) 555-2368</a>
+                    </address>
+                    <div id="footer-contacts-icons">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-youtube"></i>
+                    </div>
+                </div>
+            </footer>
         </div>
     </main>
-    <footer id="footer-element" class="capitalize">
-        <ul class="footer-list">
-            <h2>UINugget</h2>
-            <li>privacy policy</li>
-            <li>&copy; UINugget copyrights</li>
-        </ul>
-        <ul class="footer-list">
-            <h3>menu</h3>
-            <li>about</li>
-            <li>care center</li>
-            <li>service</li>
-        </ul>
-        <ul class="footer-list">
-            <h2>&nbsp;</h2>
-            <li>prefrences</li>
-            <li>Executions</li>
-        </ul>
-        <div id="footer-contacts">
-            <h3>contact us</h3>
-            <address>
-                <a href="mailto:jim@rock.com" class="inline-display">jim@rock.com</a>
-                &nbsp;
-                <a href="tel:+13115552368" class="inline-display">(311) 555-2368</a>
-            </address>
-            <div id="footer-contacts-icons">
-                <i class="fa-brands fa-facebook-f"></i>
-                <i class="fa-brands fa-twitter"></i>
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-youtube"></i>
-            </div>
-        </div>
-    </footer>
 
 </body>
 

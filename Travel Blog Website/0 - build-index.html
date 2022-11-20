@@ -17,10 +17,11 @@
         }
 
         body {
+            color: black;
+            background-color: black;
             padding: 2rem;
             margin: 0;
             height: 100vh;
-            color: black;
         }
 
         section {
@@ -30,41 +31,25 @@
 </head>
 
 <body>
-    <section id="planning">
-        <div id="" class="planning-card">
-            <div>
-                <!-- i put this here to make all inside element in one div, 
-                also to to avoid giving the button all the horizontal space -->
-                <h2 class="capitalize">Planning Your Tours</h2>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam laborum ab, eos sequi
-                    nisi
-                    totam recusandae maiores id vel modi molestiae sunt quam adipisci voluptatem maxime
-                    voluptatum!
-                </p>
-                <button class="btn btn-primary planning-btn caps-lock inline-display">discover more</button>
-            </div>
+    <div id="intro-title">
+        <p>Book your desired travel place</p>
+        <h1 class="capitalize">travel for life</h1>
+    </div>
+    <form action="" method="post" onsubmit="return false" id="booking-form">
+        <div class="inline-block-display form-component">
+            <label for="from" class="block-display">From</label>
+            <input type="text" name="from" id="from">
         </div>
-    
-        <div>
-            <div class="planning-card shadow-card">
-                <h3 class="capitalize">live poker how to win tournament games</h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis consequuntur sed modi
-                    quis
-                    olestiae optio tempore, dolor asperiores dolorum.
-                </p>
-            </div>
-            <div class="planning-card">
-                <h3 class="capitalize">trip to iqaluit in numavut a canadian arctic city</h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis consequuntur sed modi
-                    quis
-                    molestiae optio tempore, dolor asperiores dolorum.
-                </p>
-            </div>
+        <div class="inline-block-display form-component">
+            <label for="to" class="block-display">To</label>
+            <input type="text" name="to" id="to">
         </div>
-    </section>
+        <div class="inline-block-display form-component">
+            <label for="travelDate" class="block-display">Travel Date</label>
+            <input type="text" name="travelDate" id="travelDatee">
+        </div>
+        <input type="submit" value="Book Now" class="btn btn-primary booking-btn">
+    </form>
 
 </body>
 
