@@ -1,0 +1,17 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  /* border: 1px solid black; */
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Noto Sans Display", "Gill Sans", "Gill Sans MT", Calibri,
+    "Trebuchet MS", sans-serif;
+  font-size: 1.6rem;
+  height: 100vh;
+}
