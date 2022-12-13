@@ -7,11 +7,284 @@
 
 :root {
   font-size: 62.5%;
+
+  --primary-soft-orange: hsl(35, 77%, 62%);
+  --primary-soft-red: hsl(5, 85%, 63%);
+
+  --neutral-off-white: hsl(36, 100%, 99%);
+  --neutral-grayish-blue: hsl(233, 8%, 79%);
+  --neutral-dark-grayish-blue: hsl(236, 13%, 42%);
+  --neutral-very-dark-blue: hsl(240, 100%, 5%);
+
+  --container-max-width: 1000px;
+  --container-max-height: 200px;
+  --picture-max-width: 650px;
+  --picture-max-width-mobile: 310px;
 }
 
+/* General classes and styles */
+/* Headings */
+h1,
+#logo {
+  /* font-size: 5rem; */
+  /* font-weight: 800; */
+  color: var(--neutral-very-dark-blue);
+  margin: 0;
+}
+h1 {
+  font-size: 4.5rem;
+}
+#new h2 {
+  color: var(--primary-soft-orange);
+}
+#new h3 {
+  color: var(--neutral-off-white);
+  margin-bottom: 0;
+}
+#new p {
+  margin-top: 0.5rem;
+}
+
+/* Lists */
+ul {
+  list-style: none;
+  margin: 0;
+}
+
+/* images */
+img {
+  width: 100%;
+}
+
+#menu-icon {
+  display: none;
+}
+
+/* buttons */
+.btn {
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  outline: 0;
+  border: 0;
+}
+
+.btn-primary {
+  color: var(--neutral-off-white);
+  background-color: var(--primary-soft-red);
+}
+
+.btn:hover {
+  background-color: var(--neutral-very-dark-blue);
+  cursor: pointer;
+}
+
+.clear-fix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/*  */
+
 body {
+  color: var(--neutral-dark-grayish-blue);
+  font-size: 1.5rem;
   font-family: "Noto Sans Display", "Gill Sans", "Gill Sans MT", Calibri,
     "Trebuchet MS", sans-serif;
-  font-size: 1.6rem;
-  height: 100vh;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#main-container {
+  /* border: 2px solid black; */
+  padding: 1rem 1rem 3rem;
+  width: 100%;
+  max-width: var(--container-max-width);
+}
+
+#header {
+  /* height: 8rem; */
+  /* padding: 4rem 0; */
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#header li {
+  text-align: center;
+  width: 70px;
+  height: 100px;
+  line-height: 100px;
+  transition: all 0.5s;
+}
+#header li:hover {
+  color: var(--neutral-off-white);
+  background-color: var(--neutral-very-dark-blue);
+  cursor: pointer;
+}
+
+#nav-bar {
+  display: flex;
+}
+
+#main-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* align-items: flex-start; */
+}
+
+#heading {
+  flex-shrink: 1;
+  flex-basis: 5em;
+  /* by default: auto it will look for width and height */
+
+  flex-grow: 1;
+  /* 0 by default, with one they will grow to fit all the line space */
+  /* they are growing at the same factor */
+  /* background-color: gold; */
+  width: 720px;
+  /* height: 70px; */
+  margin-right: 2rem;
+}
+
+#heading picture,
+#heading img {
+  /* object-fit: cover; */
+  /* max-height: var(--container-max-height); */
+  width: 100%;
+  max-width: var(--picture-max-width);
+}
+
+#main-heading {
+  max-width: var(--picture-max-width);
+  margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#main-heading div:last-child {
+  line-height: 2.4rem;
+}
+#main-heading div {
+  /* min-width: 200px; */
+  /* width: 300px; */
+  /* flex-shrink: 1; */
+  min-width: 150px;
+  /* background-color: dodgerblue; */
+
+  margin-right: 2rem;
+  flex-basis: 5em;
+  flex-grow: 1;
+}
+
+#new {
+  background-color: var(--neutral-very-dark-blue);
+  padding: 1rem 2rem;
+  margin: 3rem 0;
+  width: 310px;
+  flex-shrink: 1;
+}
+
+#new div {
+  padding: 1.5rem 0;
+}
+
+#new div:nth-child(-n + 2) {
+  border-bottom: 2px solid var(--neutral-dark-grayish-blue);
+}
+
+#gaming-suggestion {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#gaming-suggestion img {
+  max-width: 110px;
+  max-height: 170px;
+  object-fit: cover;
+}
+
+.gaming-card {
+  margin: 1rem 0;
+  max-width: 350px;
+  display: flex;
+}
+/* 
+.gaming-card-info {
+} 
+*/
+
+.gaming-card-info {
+  padding-left: 2rem;
+  max-width: 210px;
+}
+.gaming-card-info h2 {
+  margin: 0;
+}
+.gaming-card-info :nth-child(2) {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: var(--neutral-very-dark-blue);
+  margin: 1rem 0;
+}
+
+/* Media */
+
+@media screen and (min-width: 720px) {
+  #new {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 690px) {
+  h1 {
+    font-size: 5rem;
+  }
+  body {
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center;  */
+  }
+
+  #nav-bar {
+    display: none;
+  }
+  #menu-icon {
+    display: block;
+  }
+
+  #main-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  /* #main-heading {
+    flex-direction: column;
+  } */
+
+  #heading picture,
+  #heading img {
+    max-width: 100%;
+  }
+  #heading {
+    margin-right: 0;
+    max-width: var(--picture-max-width-mobile);
+  }
+  #main-heading {
+    flex-direction: column;
+  }
+  #main-heading p {
+    text-align: justify;
+  }
+  #gaming-suggestion {
+    justify-content: center;
+  }
 }
