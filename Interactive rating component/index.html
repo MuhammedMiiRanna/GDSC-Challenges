@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/c2b7b2c34b.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="../General Resources/normalize.css">
+  <link rel="stylesheet" type="text/css" href="../General Resources/normalize.css">
   <link rel="stylesheet" href="styles.css">
 
   <title>Frontend Mentor | Interactive rating component</title>
@@ -112,35 +112,7 @@
 
   </main>
 
-  <script>
-    let info = {
-      rating: 0,
-      lastItem: null
-    };
-    document.getElementById("rating").addEventListener('click', (evt) => {
-      if (info['lastItem'] !== null) {
-        info['lastItem'].style.backgroundColor = 'var(--dark-blue)';
-        info['lastItem'].style.color = 'var(--light-grey)';
-      }
-
-      info['rating'] = evt.target.innerText;
-      evt.target.style.backgroundColor = 'var(--medium-grey)';
-      evt.target.style.color = 'var(--white)';
-      info['lastItem'] = evt.target;
-    });
-
-    document.getElementById("submit-btn").addEventListener('click', (evt) => {
-      if (info['rating'] === 0) {
-        alert("Please choose a number");
-      }
-      else {
-        document.getElementById("selected-rating").innerText = info['rating'];
-        document.getElementById("normaleState").style.display = "none";
-        document.getElementById("thankYouState").style.display = "block";
-      }
-    });
-
-  </script>
+  <script src="script.js"></script>
 
   <!-- 
     <div class="attribution">
