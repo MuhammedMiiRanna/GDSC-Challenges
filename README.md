@@ -4,4 +4,4 @@ GDSC, also known as Google Developer Student Clubs. A university based community
 
 # GDSC Challenges
 
-This repo will be where I share the challenges I solve as a member of GDSC. the central theme will be front-end challenges.
+This repo will be where I share the challenges that I solve as a member of GDSC. the main theme will be front-end challenges.
