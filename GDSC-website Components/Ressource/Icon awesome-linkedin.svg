@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="87.593" height="87.593" viewBox="0 0 87.593 87.593">
+  <defs>
+    <filter id="Icon_awesome-linkedin" x="0" y="0" width="87.593" height="87.593" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Icon_awesome-linkedin)">
+    <path id="Icon_awesome-linkedin-2" data-name="Icon awesome-linkedin" d="M64.622,2.25H4.955A4.992,4.992,0,0,0,0,7.268V66.826a4.992,4.992,0,0,0,4.955,5.018H64.622a5.006,5.006,0,0,0,4.971-5.018V7.268A5.006,5.006,0,0,0,64.622,2.25ZM21.033,61.9H10.719V28.689h10.33V61.9ZM15.876,24.153a5.981,5.981,0,1,1,5.981-5.981,5.983,5.983,0,0,1-5.981,5.981ZM59.7,61.9H49.383V45.746c0-3.852-.078-8.808-5.359-8.808-5.375,0-6.2,4.194-6.2,8.528V61.9H27.511V28.689h9.9v4.536h.14a10.864,10.864,0,0,1,9.771-5.359C57.756,27.866,59.7,34.748,59.7,43.7Z" transform="translate(9 3.75)" fill="#4285f4"/>
+  </g>
+</svg>
