@@ -1,95 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1,
-  maximum-scale=5"
-    />
 
-    <link rel="icon" href="devchallenges.png" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
 
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="https://devchallenges.io/"
-    />
+  <link rel="icon" href="devchallenges.png" />
+  <link rel="shortcut icon" type="image/x-icon" href="https://devchallenges.io/" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/c2b7b2c34b.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../normalize.css" type="text/css" />
+  <link rel="stylesheet" href="style.css" type="text/css" />
+  <style>
+    ul {
+      padding-left: 24px;
+    }
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
+    li {
+      margin-bottom: 8px;
+    }
 
-    <title>Devchallenges</title>
+    .welcome {
+      max-width: 800px;
+      margin: 0 auto;
+    }
 
-    <style>
-      body {
-        font-family: "Poppins", sans-serif;
-      }
+    .welcome-text {
+      margin-top: 30vh;
+      font-weight: 500;
+    }
 
-      ul {
-        padding-left: 24px;
-      }
+    .welcome-text p {
+      font-size: 1rem;
+      font-weight: 400;
+    }
 
-      li {
-        margin-bottom: 8px;
-      }
+    .welcome-text h1 {
+      font-size: 1.5rem;
+    }
 
-      .welcome {
-        max-width: 800px;
-        margin: 0 auto;
-      }
+    .welcome-text a {
+      color: #f7542e;
+    }
+  </style>
 
-      .welcome-text {
-        margin-top: 30vh;
-        font-weight: 500;
-      }
+  <title>WeatherApp | Devchallenges</title>
 
-      .welcome-text p {
-        font-size: 1rem;
-        font-weight: 400;
-      }
+  <style></style>
+</head>
 
-      .welcome-text h1 {
-        font-size: 1.5rem;
-      }
-
-      .welcome-text a {
-        color: #f7542e;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="welcome">
-      <div class="welcome-text">
-        <h1>
-          Welcome to
-          <a href="https://devchallenges.io/" target="_blank"
-            >devchallenges.io</a
-          >
-        </h1>
-
-        <p>
-          If you have any questions, don't hesitate to ask on Discord. Here are
-          7 general steps to complete the challenge:
-        </p>
+<body>
+  <!-- <aside></aside> -->
+  <main id="main-content">
+    <article id="primary-content">
+      <div id="primary-buttons">
+        <button id="search-button" class="btn prm-btn">Search for places</button>
+        <button id="gps-button" class="btn prm-btn">
+          <i class="fa-solid fa-location-crosshairs"></i>
+        </button>
       </div>
+      <div id="primary-img">
+        <img src="images/Shower.png" alt="shower weather" />
+      </div>
+      <div id="primary-infos">
+        <p id="tempurature"><span id="tempurature-level">15</span><span id="celsius"><sup>o</sup>C</span></p>
+        <p id="weather-state">Shower</p>
+        <p id="date">Today . Fri, 5 Jun</p>
+        <p id="location"><i class="fa-solid fa-location-dot"></i> Helsinki</p>
+      </div>
+    </article>
 
-      <ul>
-        <li><b>Step 1:</b> Create a new repository on github</li>
-        <li><b>Step 2:</b> Copy resources, README.md to your repository</li>
-        <li>
-          <b>Step 3:</b> Login to Figma to checkout font, color, spacing,..
-        </li>
-        <li><b>Step 4:</b> Complete all user stories</li>
-        <li><b>Step 5:</b> Update README.md</li>
-        <li><b>Step 6:</b> Deploy your app and submit your solution</li>
-        <li>
-          <b>Step 7:</b> Share your solution on Discord, Twitter and other
-          platforms to ask for feedback
-        </li>
-      </ul>
-    </div>
-  </body>
+    <article id="secondary-content">
+      <section id="tempType">
+        <button class="btn btn-tempType">°C</button>
+        <button class="btn btn-tempType">°F</button>
+      </section>
+
+      <section id="days">
+        <button class="btn btn-tempType">°C</button>
+        <button class="btn btn-tempType">°F</button>
+
+        <div class="day-card">
+          <div class="day-date">Tomorrow</div>
+          <div class="day-img">
+            <img src="../images/Sleet.png" alt="Snow-day">
+          </div>
+          <div class="day-temp">
+            <Span class="day-temp-max">16°C</span>
+            &ensp;
+            <Span class="day-temp-min">11°C</span>
+          </div>
+        </div>
+
+        <div class="day-card">
+          <div class="day-date">Tomorrow</div>
+          <div class="day-img">
+            <img src="../images/Sleet.png" alt="Snow-day">
+          </div>
+          <div class="day-temp">
+            <Span class="day-temp-max">16°C</span>
+            &ensp;
+            <Span class="day-temp-min">11°C</span>
+          </div>
+        </div>
+
+      </section>
+
+      <section id="todays-highlights">
+      </section>
+    </article>
+  </main>
+
+  <!-- <i class="fa-solid fa-crosshairs"></i>
+  <i class="fa-regular fa-crosshairs"></i>
+
+  <i class="fa-solid fa-location-crosshairs"></i>
+  <i class="fa-regular fa-location-crosshairs"></i>
+
+  --- <i class="fa-solid fa-location-dot"></i> 
+
+  <i class="fa-regular fa-location-dot"></i>
+  <i class="fa-light fa-location-dot"></i> -->
+</body>
+
 </html>

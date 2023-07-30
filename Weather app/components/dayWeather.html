@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+
+    <title>Day Weather</title>
+    <style>
+        .day-card {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="day-card">
+        <div class="day-date">Tomorrow</div>
+        <div class="day-img">
+            <img src="../images/Sleet.png" alt="Snow-day">
+        </div>
+        <div class="day-temp">
+            <Span class="day-temp-max">16°C</span>
+            &ensp;
+            <Span class="day-temp-min">11°C</span>
+        </div>
+    </div>
+
+    <!-- // http://api.openweathermap.org/geo/1.0/direct?q=London&appid=5ac380a6344338786e91a0e565a4a21b -->
+    <script>
+        const apiUrl = 'http://api.openweathermap.org/data/2.5/weather?q=New%20York,US&appid=5ac380a6344338786e91a0e565a4a21b';
+
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                // Handle the API response data here (weather data)
+                console.log(data); // Output the data to the console or process it further
+            })
+            .catch(error => console.error('Error fetching weather data:', error));
+
+    </script>
+
+    <!-- 
+    <script>
+        const apiUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=New%20York,US&limit=1&appid=5ac380a6344338786e91a0e565a4a21b';
+        // const apiUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=New%20York,US&limit=1&appid=your_api_key_here';
+        // http://api.openweathermap.org/geo/1.0/direct?q=London&appid=5ac380a6344338786e91a0e565a4a21b
+
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                // Handle the API response data here
+                console.log(data); // Output the data to the console or process it further
+            })
+            .catch(error => console.error('Error fetching weather data:', error));
+
+    </script> 
+    -->
+
+</body>
+
+</html>
