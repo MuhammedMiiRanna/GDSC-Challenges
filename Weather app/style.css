@@ -25,39 +25,27 @@
 
   /* fonts size */
   --normal-font-size: 1.6rem;
-  --big-font-size: 10rem;
+  --very-large-font-size: 10rem;
+  --large-font-size: 5rem;
   --med-font-size: 4rem;
   --small-font-size: 2.5rem;
+  --very-small-font-size: 1rem;
 
   /* btn colors */
   --btn-color: rgb(110, 112, 122);
   --btn-search-color: rgb(60, 71, 233);
   --btn-selected-color: rgb(231, 231, 231); /* b: 235 but whos counting */
+
+  /* progress bar */
+  --prg-bar: rgb(255, 236, 101);
 }
 
 body {
   font-size: var(--normal-font-size);
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", "Poppins", sans-serif;
   color: var(--primary-font-color);
   margin: 0;
 }
-
-/* 
-body {
-  font-size: 14px;
-  font-weight: 500;
-  font-family: Montserrat;
-  color: var(--Neutral-Dark-grayish-blue);
-  background-color: var(--Primary-dream);
-  min-height: 100vh;
-  padding: 30px 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-} 
-*/
 
 /* buttons */
 .btn {
@@ -67,13 +55,6 @@ body {
 
   border: 0;
   outline: 0;
-  /* 
-  transition: color 0.5s, background-color 0.5s;
-  text-transform: uppercase;
-  letter-spacing: 0.3rem;
-  padding: 1.5rem 0;
-  width: 100%; 
-  */
 }
 
 #search-button {
@@ -87,6 +68,11 @@ body {
   border-radius: 50%;
   padding: 5px;
   margin: 10px;
+}
+#tempType {
+  /* display: flex;
+  flex-direction: row;
+  justify-content: right; */
 }
 
 .btn-tempType {
@@ -105,10 +91,10 @@ body {
   flex-direction: row;
 }
 
-#main-content > * {
+/* #main-content > * {
   flex-grow: 1;
-  flex-shrink: 1;
-}
+  flex-shrink: 1; 
+} */
 
 /* Sections and divs */
 #primary-content {
@@ -116,6 +102,7 @@ body {
   background-color: var(--primary-dark-bleu);
   /* padding: 1rem 0rem 5rem; */
   /* max-width: 684px; */
+  width: 100%;
   max-width: 400px;
   height: 100vh;
   /* min-height: 100vh; */
@@ -156,7 +143,7 @@ body {
 
 #tempurature-level {
   color: var(--primary-font-color);
-  font-size: var(--big-font-size);
+  font-size: var(--very-large-font-size);
 }
 
 #weather-state,
@@ -167,13 +154,37 @@ body {
 #secondary-content {
   color: var(--primary-font-color);
   background-color: var(--neutral-dark-bleu);
+  flex-grow: 1;
+  flex-shrink: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+
+#days {
+  /* width: 800px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* justify-content: space-between; */
+  flex-wrap: wrap;
+}
+
+/* TODO : 
+@media only screen and (max-width: 600px) {
+  #days {
+    justify-content: space-evenly;
+  } 
+}
+*/
 
 .day-card {
   /* font-size: var(--small-font-size); */
   background-color: var(--primary-dark-bleu);
-  padding: 1rem 0;
-  width: 160px;
+  padding: 1.5rem 0;
+  margin: 10px;
+  width: 140px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -182,6 +193,7 @@ body {
 }
 
 .day-img img {
+  margin: 0 0 10px;
   width: 100%;
 }
 
@@ -191,9 +203,9 @@ body {
   /* height: 220px; */
 }
 
-.day-card div {
-  margin: 1rem 0;
-}
+/* .day-card div {
+  
+} */
 
 .day-temp-min {
   color: var(--secondary-font-color);

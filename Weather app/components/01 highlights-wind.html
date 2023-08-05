@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/c2b7b2c34b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style.css">
+    <title>Highlights</title>
+    <style>
+        .highlights {
+            /* display: flex; */
+        }
+
+        .highlight {
+            background-color: var(--primary-dark-bleu);
+            width: 300px;
+            padding: 1.5rem;
+            margin: 30px 20px;
+
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            /* display: block; */
+        }
+
+        .highlight-1,
+        highlight-2 {
+            min-height: 172px;
+        }
+
+        .highlight p {
+            /* font-size: var(--very-small-font-size); */
+            margin: 0.8rem 0;
+        }
+
+        .highlight p:nth-child(odd),
+        .highlight .mf-span {
+            color: var(--secondary-font-color);
+        }
+
+        .highlight .lf-span {
+            /* larger font span */
+            font-size: var(--large-font-size);
+        }
+
+        .highlight .mf-span {
+            /* larger font span */
+            font-size: var(--med-font-size);
+        }
+
+        #wind i {
+            color: var(--primary-font-color);
+            background-color: var(--secondary-font-color);
+            height: 27px;
+            width: 27px;
+            padding: 5px;
+            /* margin: 10px; */
+            border-radius: 50%;
+            display: inline;
+        }
+
+        .progress-bar__container {
+            width: 80%;
+            height: 0.7rem;
+            border-radius: 2rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 2px var(--prg-bar);
+            /* box-shadow: 0 0 2px #e76f51; */
+        }
+
+        .progress-bar {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            content: "";
+            background-color: var(--prg-bar);
+            top: 0;
+            bottom: 0;
+            left: -50%;
+            border-radius: inherit;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="highlights">
+        <div id="wind" class="highlight highlight-1">
+            <p>Wind status</p>
+            <p><span class="lf-span">7</span> <span class="mf-span">mph</span></p>
+            <p><i class="fa-solid fa-location-arrow"></i> wsw</p>
+        </div>
+
+        <div id="humidity" class="highlight highlight-2">
+            <p>Humidity</p>
+            <p><span class="lf-span">84</span> <span class="mf-span">%</span></p>
+            <div class="progress-bar__container">
+                <p>
+                <div class="progress-bar">
+                    <span class="progress-bar__text"></span>
+                </div>
+                </p>
+            </div>
+
+        </div>
+
+        <div id="visibility" class="highlight">
+            <p>Visibility</p>
+            <p><span class="lf-span">6.4</span> <span class="mf-span">miles</span></p>
+        </div>
+
+        <div id="air" class="highlight">
+            <p>Air Pressure</p>
+            <p><span class="lf-span">998</span> <span class="mf-span">mb</span></p>
+        </div>
+    </div>
+
+</body>
+
+</html>
