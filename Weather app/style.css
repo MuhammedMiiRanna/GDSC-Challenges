@@ -47,6 +47,13 @@ body {
   margin: 0;
 }
 
+/* stuff */
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
 /* buttons */
 .btn {
   color: var(--primary-font-color);
@@ -69,13 +76,9 @@ body {
   padding: 5px;
   margin: 10px;
 }
-#tempType {
-  /* display: flex;
-  flex-direction: row;
-  justify-content: right; */
-}
 
 .btn-tempType {
+  float: right;
   padding: 5px;
   margin: 5px;
   width: 30px;
@@ -87,7 +90,7 @@ body {
 #main-content {
   /* width: 100vw; */
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   flex-direction: row;
 }
 
@@ -106,6 +109,30 @@ body {
   max-width: 400px;
   height: 100vh;
   /* min-height: 100vh; */
+
+  /* flex-basis: 20rem; */
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
+#secondary-content {
+  color: var(--primary-font-color);
+  background-color: var(--neutral-dark-bleu);
+  flex-grow: 1;
+  flex-shrink: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#wraper-solver {
+  display: inline-block;
+  width: 720px;
+}
+
+#wraper-solver > * {
+  margin-bottom: 4rem;
 }
 
 #primary-buttons {
@@ -151,33 +178,19 @@ body {
   font-size: var(--med-font-size);
 }
 
-#secondary-content {
-  color: var(--primary-font-color);
-  background-color: var(--neutral-dark-bleu);
-  flex-grow: 1;
-  flex-shrink: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+/* 
+#tempType {
+} 
+*/
 
 #days {
   /* width: 800px; */
   display: flex;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
   /* justify-content: space-between; */
   flex-wrap: wrap;
 }
-
-/* TODO : 
-@media only screen and (max-width: 600px) {
-  #days {
-    justify-content: space-evenly;
-  } 
-}
-*/
 
 .day-card {
   /* font-size: var(--small-font-size); */
@@ -210,16 +223,21 @@ body {
 /*  */
 /* Highlights */
 /*  */
+/* TODO:
+.highlights {
+  margin-top: 4rem;
+} */
 
 .highlight-group {
   display: flex;
+  justify-content: space-between;
 }
 
 .highlight {
   background-color: var(--primary-dark-bleu);
   width: 300px;
   padding: 1.5rem;
-  margin: 30px 20px;
+  margin: 0 20px 20px;
 
   text-align: center;
   display: flex;
@@ -291,3 +309,13 @@ highlight-2 {
   color: white;
   font-family: sans-serif;
 }
+
+/* DRAFT */
+
+/* TODO : 
+@media only screen and (max-width: 600px) {
+  #days {
+    justify-content: space-evenly;
+  } 
+}
+*/
