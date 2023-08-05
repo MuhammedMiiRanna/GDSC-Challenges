@@ -12,6 +12,10 @@
             /* display: flex; */
         }
 
+        .highlight-group {
+            display: flex;
+        }
+
         .highlight {
             background-color: var(--primary-dark-bleu);
             width: 300px;
@@ -94,33 +98,35 @@
 <body>
 
     <div class="highlights">
-        <div id="wind" class="highlight highlight-1">
-            <p>Wind status</p>
-            <p><span class="lf-span">7</span> <span class="mf-span">mph</span></p>
-            <p><i class="fa-solid fa-location-arrow"></i> wsw</p>
-        </div>
-
-        <div id="humidity" class="highlight highlight-2">
-            <p>Humidity</p>
-            <p><span class="lf-span">84</span> <span class="mf-span">%</span></p>
-            <div class="progress-bar__container">
-                <p>
-                <div class="progress-bar">
-                    <span class="progress-bar__text"></span>
-                </div>
-                </p>
+        <div class="highlight-group">
+            <div id="wind" class="highlight highlight-1">
+                <p>Wind status</p>
+                <p><span class="lf-span">7</span> <span class="mf-span">mph</span></p>
+                <p><i class="fa-solid fa-location-arrow"></i> wsw</p>
             </div>
-
+            <div id="humidity" class="highlight highlight-2">
+                <p>Humidity</p>
+                <p><span class="lf-span">84</span> <span class="mf-span">%</span></p>
+                <div class="progress-bar__container">
+                    <p>
+                    <div class="progress-bar">
+                        <span class="progress-bar__text"></span>
+                    </div>
+                    </p>
+                </div>
+            </div>
         </div>
 
-        <div id="visibility" class="highlight">
-            <p>Visibility</p>
-            <p><span class="lf-span">6.4</span> <span class="mf-span">miles</span></p>
-        </div>
 
-        <div id="air" class="highlight">
-            <p>Air Pressure</p>
-            <p><span class="lf-span">998</span> <span class="mf-span">mb</span></p>
+        <div class="highlight-group">
+            <div id="visibility" class="highlight">
+                <p>Visibility</p>
+                <p><span class="lf-span">6.4</span> <span class="mf-span">miles</span></p>
+            </div>
+            <div id="air" class="highlight">
+                <p>Air Pressure</p>
+                <p><span class="lf-span">998</span> <span class="mf-span">mb</span></p>
+            </div>
         </div>
     </div>
 
