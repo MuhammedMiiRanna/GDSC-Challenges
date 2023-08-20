@@ -41,10 +41,14 @@
 }
 
 body {
+  color: var(--primary-font-color);
   font-size: var(--normal-font-size);
   font-family: "Roboto", "Poppins", sans-serif;
-  color: var(--primary-font-color);
+  background-color: var(--neutral-dark-bleu);
   margin: 0;
+
+  max-width: 1500px;
+  max-height: 900px;
 }
 
 /* stuff */
@@ -94,25 +98,32 @@ body {
   flex-direction: row;
 }
 
-/* #main-content > * {
-  flex-grow: 1;
-  flex-shrink: 1; 
-} */
+@media only screen and (max-width: 800px) {
+  #main-content {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #primary-content {
+    max-height: 700px;
+  }
+}
 
 /* Sections and divs */
 #primary-content {
   text-align: center;
+
   background-color: var(--primary-dark-bleu);
   /* padding: 1rem 0rem 5rem; */
   /* max-width: 684px; */
   width: 100%;
-  max-width: 400px;
+  /* max-width: 400px; */
+  flex-basis: 400px;
   height: 100vh;
   /* min-height: 100vh; */
 
-  /* flex-basis: 20rem; */
   flex-grow: 1;
-  flex-shrink: 0;
+  flex-shrink: 1;
+  /* flex-shrink: 0;  */
 }
 
 #secondary-content {
@@ -124,14 +135,16 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  /* flex-wrap: wrap; */
 }
 
 #wraper-solver {
   display: inline-block;
-  width: 720px;
+  max-width: 720px;
 }
 
 #wraper-solver > * {
+  margin-top: 2rem;
   margin-bottom: 4rem;
 }
 
@@ -148,6 +161,7 @@ body {
   background-repeat: none;
   background-size: cover;
   height: 250px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -184,11 +198,9 @@ body {
 */
 
 #days {
-  /* width: 800px; */
   display: flex;
   justify-content: space-around;
   align-items: center;
-  /* justify-content: space-between; */
   flex-wrap: wrap;
 }
 
@@ -223,14 +235,20 @@ body {
 /*  */
 /* Highlights */
 /*  */
-/* TODO:
+/* /* TODO: */
 .highlights {
-  margin-top: 4rem;
-} */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .highlight-group {
+  /* flex-shrink: 1; */
+
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .highlight {
@@ -245,6 +263,8 @@ body {
   justify-content: space-around;
   align-items: center;
   /* display: block; */
+
+  flex-grow: 1;
 }
 
 .highlight-1,
@@ -285,6 +305,7 @@ highlight-2 {
 
 .progress-bar__container {
   width: 80%;
+  max-width: 350px;
   height: 0.7rem;
   border-radius: 2rem;
   position: relative;
@@ -294,11 +315,13 @@ highlight-2 {
 }
 
 .progress-bar {
-  position: absolute;
+  color: white;
+  font-family: sans-serif;
+  background-color: var(--prg-bar);
   height: 100%;
   width: 100%;
   content: "";
-  background-color: var(--prg-bar);
+  position: absolute;
   top: 0;
   bottom: 0;
   left: -50%;
@@ -306,16 +329,4 @@ highlight-2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
-  font-family: sans-serif;
 }
-
-/* DRAFT */
-
-/* TODO : 
-@media only screen and (max-width: 600px) {
-  #days {
-    justify-content: space-evenly;
-  } 
-}
-*/

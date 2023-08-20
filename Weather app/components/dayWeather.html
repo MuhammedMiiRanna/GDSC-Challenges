@@ -11,23 +11,132 @@
         .day-card {
             margin: 20px;
         }
+
+        .container-2 {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        body {}
     </style>
 </head>
 
 <body>
+    <div class="container-1">
+        <div>dfdf</div>
+        <div>dfdf</div>
+        <div class="container-2">
 
-    <div class="day-card">
-        <div class="day-date">Tomorrow</div>
-        <div class="day-img">
-            <img src="../images/Sleet.png" alt="Snow-day">
-        </div>
-        <div class="day-temp">
-            <Span class="day-temp-max">16°C</span>
-            &ensp;
-            <Span class="day-temp-min">11°C</span>
+            <div class="day-card">
+                <div class="day-date">Tomorrow</div>
+                <div class="day-img">
+                    <img src="../images/Sleet.png" alt="Snow-day">
+                </div>
+                <div class="day-temp">
+                    <Span class="day-temp-max">16°C</span>
+                    &ensp;
+                    <Span class="day-temp-min">11°C</span>
+                </div>
+            </div>
+            <div class="day-card">
+                <div class="day-date">Tomorrow</div>
+                <div class="day-img">
+                    <img src="../images/Sleet.png" alt="Snow-day">
+                </div>
+                <div class="day-temp">
+                    <Span class="day-temp-max">16°C</span>
+                    &ensp;
+                    <Span class="day-temp-min">11°C</span>
+                </div>
+            </div>
+            <div class="day-card">
+                <div class="day-date">Tomorrow</div>
+                <div class="day-img">
+                    <img src="../images/Sleet.png" alt="Snow-day">
+                </div>
+                <div class="day-temp">
+                    <Span class="day-temp-max">16°C</span>
+                    &ensp;
+                    <Span class="day-temp-min">11°C</span>
+                </div>
+            </div>
+            <div class="day-card">
+                <div class="day-date">Tomorrow</div>
+                <div class="day-img">
+                    <img src="../images/Sleet.png" alt="Snow-day">
+                </div>
+                <div class="day-temp">
+                    <Span class="day-temp-max">16°C</span>
+                    &ensp;
+                    <Span class="day-temp-min">11°C</span>
+                </div>
+            </div>
+            <div class="day-card">
+                <div class="day-date">Tomorrow</div>
+                <div class="day-img">
+                    <img src="../images/Sleet.png" alt="Snow-day">
+                </div>
+                <div class="day-temp">
+                    <Span class="day-temp-max">16°C</span>
+                    &ensp;
+                    <Span class="day-temp-min">11°C</span>
+                </div>
+            </div>
+            <div class="day-card">
+                <div class="day-date">Tomorrow</div>
+                <div class="day-img">
+                    <img src="../images/Sleet.png" alt="Snow-day">
+                </div>
+                <div class="day-temp">
+                    <Span class="day-temp-max">16°C</span>
+                    &ensp;
+                    <Span class="day-temp-min">11°C</span>
+                </div>
+            </div>
+            <div class="day-card">
+                <div class="day-date">Tomorrow</div>
+                <div class="day-img">
+                    <img src="../images/Sleet.png" alt="Snow-day">
+                </div>
+                <div class="day-temp">
+                    <Span class="day-temp-max">16°C</span>
+                    &ensp;
+                    <Span class="day-temp-min">11°C</span>
+                </div>
+            </div>
+            <div class="day-card">
+                <div class="day-date">Tomorrow</div>
+                <div class="day-img">
+                    <img src="../images/Sleet.png" alt="Snow-day">
+                </div>
+                <div class="day-temp">
+                    <Span class="day-temp-max">16°C</span>
+                    &ensp;
+                    <Span class="day-temp-min">11°C</span>
+                </div>
+            </div>
         </div>
     </div>
 
+
+    <script>
+        const element = document.getElementById("days");
+        for (let index = 0; index < 5; index++) {
+            const dayCard = document.createElement('div');
+            dayCard.className = "day-card";
+            dayCard.innerHTML = `
+            <div class="day-date">Today</div>
+            <div class="day-img">
+                <img src="../images/Sleet.png" alt="Snow-day">
+            </div>
+            <div class="day-temp">
+                <Span class="day-temp-max">16°C</span>
+                &ensp;
+                <Span class="day-temp-min">14°C</span>
+            </div>`;
+            element.appendChild(dayCard);
+        }
+    </script>
     <!-- // http://api.openweathermap.org/geo/1.0/direct?q=London&appid=5ac380a6344338786e91a0e565a4a21b -->
     <script>
         const apiUrl = 'http://api.openweathermap.org/data/2.5/weather?q=New%20York,US&appid=5ac380a6344338786e91a0e565a4a21b';

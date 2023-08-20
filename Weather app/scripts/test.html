@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Api test</title>
+</head>
+
+<body>
+
+    <script>
+        function getForecastData(forecastData, days = 5) {
+
+            const daysData = {};
+            let index = 0;
+
+            const firstDayDate = new Date(forecastData[0].dt * 1000).getDate();
+            let lastDate = firstDayDate
+
+            for (let date of forecastData) {
+                const currentDate = new Date(date.dt * 1000).getDate();
+
+                if (currentDate > lastDate) {
+                    lastDate = currentDate;
+                    daysData[index] = date;
+                    index++;
+                }
+
+                // break when we have enough daysData
+                if (currentDate > (firstDayDate + days)) {
+                    break;
+                }
+            }
+            return daysData;
+        }
+
+        function weather(forecastData) {
+            console.log('> weather ', forecastData);
+            for (let entry of Object.entries(forecastData)) {
+                console.log(entry); // return (key value) pairs
+            }
+
+            for (let day of forecastData) {
+                console.log(day);
+            }
+
+            // if (name) console.log(name);
+            // if (weatherstate) console.log("   > weather state:", weatherstate);
+            // if (maxTemp) console.log("   > max temp:", maxTemp);
+            // if (minTemp) console.log("   > min temp:", minTemp);
+            // if (date) console.log("   > Date:", date, typeof date);
+        }
+
+        const apiKey = "1882cccd3bc2868b511d2c16524c5e1b"; // Replace with your OpenWeatherMap API key
+        const city = "New York"; // Replace with the desired city name
+
+        fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                // Extract the forecast data for 5 days
+                let forecastData = data.list;
+                forecastData = getForecastData(forecastData, 5);
+                console.log(forecastData);
+                weather(forecastData);
+
+                // // Display max and min temperature for today and the next 4 days
+                // for (let i = 0; i < 5; i++) {
+                //     weather(name, weatherstate, maxTemp, minTemp, forecastDate)
+                //     const maxTemp = forecastData[i].main.temp_max;
+                //     const minTemp = forecastData[i].main.temp_min;
+                //     // weather('Day ' + (i + 1), null, maxTemp, minTemp, forecastData[i].dt);
+                // }
+
+                // Extract other weather data from the first forecast entry (current weather)
+                const windSpeed = forecastData[0].wind.speed;
+                const humidity = forecastData[0].main.humidity;
+                const visibility = forecastData[0].visibility;
+                const airPressure = forecastData[0].main.pressure;
+
+                // Display wind speed, humidity, visibility, and air pressure
+                console.log('Wind Speed:', windSpeed);
+                console.log('Humidity:', humidity);
+                console.log('Visibility:', visibility);
+                console.log('Air Pressure:', airPressure);
+            })
+            .catch(error => {
+                console.error("Error fetching weather data:", error);
+            });
+    </script>
+
+    <!-- <script>
+        function weather(name, weatherstate, maxTemp, minTemp, date) {
+            if (name) console.log(name);
+            if (weatherstate) console.log("   > weather state:", weatherstate);
+            if (maxTemp) console.log("   > max temp:", maxTemp);
+            if (minTemp) console.log("   > min temp:", minTemp);
+            if (date) console.log("   > Date:", date);
+        }
+
+        // const apiKey = "5ac380a6344338786e91a0e565a4a21b"; // Replace with your API key 
+        // const apiKey = "f53d49c5e7f3ae0cb1a4f371e59e7062"; // Replace with your API key
+        // const apiKey = "1882cccd3bc2868b511d2c16524c5e1b"; // Replace with your API key
+
+        // const apiKey = "1882cccd3bc2868b511d2c16524c5e1b"; // Replace with your API key 
+        const apiKey = "95be5f304652f84a73bf9fcbc803c01b"; // Replace with your API key 
+        const city = "New York"; // Replace with the desired city name
+        let weatherData;
+
+        fetch(
+
+            // `https://pro.openweathermap.org/data/2.5/forecast/hourly?q=${city}&appid=${apiKey}`
+            `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`
+            // `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`
+            // `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`
+
+            // `https://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&cnt=5&appid=${apiKey}`
+
+            // `https://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&cnt=3&units=metric&appid=${apiKey}`
+            // `https://pro.openweathermap.org/data/2.5/forecast/hourly?q=${city}&appid=${apiKey}`
+        )
+            // .then((response) => response.json())
+            // .then((data) => {
+            //     // Extract the required weather data from the API response
+            //     const currentWeather = data.weather[0].description;
+            //     const currentTemp = data.main.temp;
+            //     const currentDate = new Date().toLocaleDateString();
+
+            //     // Display today's weather, temperature, and date
+            //     weather(
+            //         "Today's weather",
+            //         currentWeather,
+            //         currentTemp,
+            //         null,
+            //         currentDate
+            //     );
+            //     weatherData = data;
+
+            //     // Fetch the 5-day forecast data
+            //     return fetch(
+            //         `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`
+            //     );
+            // })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+                // Extract the forecast data for 5 days
+                const forecastData = data.list;
+
+                // Display max and min temperature for today and the next 4 days
+                for (let i = 0; i < 5; i++) {
+                    const forecastDate = new Date(forecastData[i].dt * 1000).toISOString();
+                    // const forecastDate = new Date(forecastData[i].dt * 1000).toLocaleDateString();
+                    const maxTemp = forecastData[i].main.temp_max;
+                    const minTemp = forecastData[i].main.temp_min;
+                    weather('Day N-' + (i + 1), null, maxTemp, minTemp, forecastDate);
+                }
+
+                // Extract other weather data
+                const windSpeed = data.list[0].wind.speed;
+                const humidity = data.list[0].main.humidity;
+                const visibility = data.list[0].visibility;
+                const airPressure = data.list[0].main.pressure;
+
+                // Display wind speed, humidity, visibility, and air pressure
+                console.log('Wind Speed:', windSpeed);
+                console.log('Humidity:', humidity);
+                console.log('Visibility:', visibility);
+                console.log('Air Pressure:', airPressure);
+
+                // Update the weather data div with the 5-day forecast and other weather data
+            })
+            .catch((error) => {
+                console.error("Error fetching weather data:", error);
+            });
+    </script> -->
+</body>
+
+</html>
