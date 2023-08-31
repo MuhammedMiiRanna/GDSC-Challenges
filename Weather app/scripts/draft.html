@@ -1,0 +1,75 @@
+<!-- <i class="fa-solid fa-crosshairs"></i>
+  <i class="fa-regular fa-crosshairs"></i>
+
+  <i class="fa-solid fa-location-crosshairs"></i>
+  <i class="fa-regular fa-location-crosshairs"></i>
+
+  --- <i class="fa-solid fa-location-dot"></i> 
+
+  <i class="fa-regular fa-location-dot"></i>
+  <i class="fa-light fa-location-dot"></i> -->
+
+
+
+<!-- <script>
+    const element = document.getElementById("days");
+    for (let index = 0; index < 1; index++) {
+      const dayCard = document.createElement('div');
+      dayCard.className = "day-card";
+      dayCard.innerHTML = `
+        <div class="day-date">Today</div>
+        <div class="day-img">
+            <img src="../images/Sleet.png" alt="Snow-day">
+        </div>
+        <div class="day-temp">
+            <Span class="day-temp-max">16°C</span>
+            &ensp;
+            <Span class="day-temp-min">14°C</span>
+        </div>`;
+      element.appendChild(dayCard);
+    }
+  </script> -->
+
+
+<script>
+  async function readApiKey(filePath = 'apiKey.txt') {
+    try {
+      const response = await fetch(filePath);
+      const apiKey = await response.text();
+      return apiKey;
+    } catch (error) {
+      console.error("Error fetching apiKey:", error);
+      return null;
+    }
+  }
+
+  // Usage
+  readApiKey().then(apiKey => {
+    if (apiKey) {
+      const city = "New York"; // Replace with the desired city name
+
+      fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`)
+        .then(response => response.json())
+        .then(data => {
+          // Extract the forecast data for 5 days
+          let forecastData = data.list;
+          forecastData = getForecastData(forecastData, 5);
+
+          // Debug
+          console.log(data);
+          console.log(forecastData);
+
+          // Shows days highlights
+          weather(forecastData);
+          // Shows todays highlights
+          highlights(forecastData[0])
+
+        })
+        .catch(error => {
+          console.error("Error fetching weather data:", error);
+        });
+    } else {
+      console.log("API Key could not be retrieved.");
+    }
+  });
+</script>

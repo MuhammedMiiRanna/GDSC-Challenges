@@ -5,11 +5,132 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Api test</title>
+    <!-- <script type="module" src="test.js"></script> -->
+
+    <style>
+        #searchInput {
+            margin-bottom: 10px;
+        }
+
+        .selected {
+            background-color: lightblue;
+        }
+    </style>
 </head>
 
 <body>
-
+    <h1>Search, Select, and Hover List Items</h1>
+    <input type="text" id="searchInput" placeholder="Search...">
+    <ul id="cities-list">
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Cherry</li>
+        <li>Orange</li>
+        <li>Strawberry</li>
+        <li>Mango</li>
+    </ul>
     <script>
+        const searchInput = document.getElementById('searchInput');
+        const list = document.getElementById('cities-list');
+        const items = list.getElementsByTagName('li');
+
+        searchInput.addEventListener('input', () => {
+            const query = searchInput.value.toLowerCase();
+            for (const item of items) {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            }
+        });
+
+        list.addEventListener('click', (event) => {
+            const clickedItem = event.target;
+            if (clickedItem.tagName === 'LI') {
+                const selectedItemText = clickedItem.textContent;
+                searchInput.value = selectedItemText;
+
+                // Clear the "selected" class from other items
+                for (const item of items) {
+                    if (item !== clickedItem) {
+                        item.classList.remove('selected');
+                    }
+                }
+
+                clickedItem.classList.toggle('selected');
+            }
+        });
+
+        list.addEventListener('mouseover', (event) => {
+            const hoveredItem = event.target;
+            if (hoveredItem.tagName === 'LI') {
+                hoveredItem.style.cursor = 'pointer';
+            }
+        });
+
+        list.addEventListener('mouseout', (event) => {
+            const hoveredItem = event.target;
+            if (hoveredItem.tagName === 'LI') {
+                hoveredItem.style.cursor = 'auto';
+            }
+        });
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+<!-- <script>
+        function getPosition() {
+
+            // Check if Geolocation is available in the browser
+            if ("geolocation" in navigator) {
+                // Get the user's current position
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    const latitude = position.coords.latitude;
+                    const longitude = position.coords.longitude;
+
+                    console.log("Position:", position);
+                    console.log("Latitude:", latitude);
+                    console.log("Longitude:", longitude);
+
+                    // Use reverse geocoding to get the city name
+                    const apiUrl = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude}&lon=${longitude}`;
+                    fetch(apiUrl)
+                        .then(response => response.json())
+                        .then(data => {
+                            const cityName = data.address.city || data.address.town || data.address.village || data.address.hamlet;
+
+                            if (cityName) {
+                                console.log("City:", cityName);
+                            } else {
+                                console.log("City name not available.");
+                            }
+                        })
+                        .catch(error => {
+                            console.error("Error fetching city name:", error);
+                        });
+
+                    // You can now use these latitude and longitude values for further processing
+                }, function (error) {
+                    console.error("Error getting location:", error);
+                });
+
+            } else {
+                console.error("Geolocation is not available in this browser.");
+            }
+
+
+        }
+
+    </script> -->
+
+<!-- <script>
         function getForecastData(forecastData, days = 5) {
 
             const daysData = {};
@@ -88,9 +209,9 @@
             .catch(error => {
                 console.error("Error fetching weather data:", error);
             });
-    </script>
+    </script> -->
 
-    <!-- <script>
+<!-- <script>
         function weather(name, weatherstate, maxTemp, minTemp, date) {
             if (name) console.log(name);
             if (weatherstate) console.log("   > weather state:", weatherstate);

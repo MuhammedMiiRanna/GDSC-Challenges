@@ -20,11 +20,9 @@ This is a solution to the [Interactive rating component challenge on Frontend Me
     - [Body Copy](#body-copy)
     - [Font](#font)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
+# Overview
 
-## Overview
-
-### The challenge
+# The challenge
 
 Users should be able to:
 
@@ -33,25 +31,25 @@ Users should be able to:
 - Select and submit a number rating
 - See the "Thank you" card state after submitting a rating
 
-### Screenshot
+# Screenshot
 
 ![](./screenshot/normaleState.jpg)
 ![](./screenshot/thankyouState.jpg)
 
-### Links
+# Links
 
 - Solution URL: [interactive-rating-component-solution](https://github.com/MuhammedMiiRanna/GDSC-Challenges/tree/main/Interactive%20rating%20component)
 - Live Site URL: none
 
-## My process
+# My process
 
-### Built with
+## Built with
 
 - Semantic HTML5 markup
 - CSS custom properties
 - Mobile-first workflow
 
-## Author
+# Author
 
 - Frontend Mentor - [@MuhammedMiiRanna](https://www.frontendmentor.io/profile/MuhammedMiiRanna)
 
@@ -62,7 +60,9 @@ Users should be able to:
 The designs were created to the following widths:
 
 - Mobile: 375px
-- Desktop: 1440px
+- Desktop: > 375px
+
+Responsive web design was used.
 
 ## Colors
 
@@ -87,4 +87,5 @@ The designs were created to the following widths:
 ### Font
 
 - Family: [Overpass](https://fonts.google.com/specimen/Overpass)
+- Fallback font: sans-serif
 - Weights: 400, 700

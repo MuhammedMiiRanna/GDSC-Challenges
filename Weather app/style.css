@@ -67,8 +67,7 @@ body {
   border: 0;
   outline: 0;
 }
-
-#search-button {
+.btn-search {
   padding: 1rem;
   margin: 10px;
 }
@@ -81,7 +80,7 @@ body {
   margin: 10px;
 }
 
-.btn-tempType {
+.btn-tempMetric {
   float: right;
   padding: 5px;
   margin: 5px;
@@ -103,7 +102,8 @@ body {
     flex-wrap: wrap;
     justify-content: center;
   }
-  #primary-content {
+  #primary-content,
+  #search-bar {
     max-height: 700px;
   }
 }
@@ -111,26 +111,26 @@ body {
 /* Sections and divs */
 #primary-content {
   text-align: center;
-
   background-color: var(--primary-dark-bleu);
+
   /* padding: 1rem 0rem 5rem; */
   /* max-width: 684px; */
-  width: 100%;
   /* max-width: 400px; */
-  flex-basis: 400px;
-  height: 100vh;
   /* min-height: 100vh; */
+  /* height: 100vh; */
+  width: 100%;
+  flex-basis: 200px;
+  height: 100vh;
 
   flex-grow: 1;
   flex-shrink: 1;
-  /* flex-shrink: 0;  */
 }
 
 #secondary-content {
   color: var(--primary-font-color);
   background-color: var(--neutral-dark-bleu);
   flex-grow: 1;
-  flex-shrink: 1;
+  flex-shrink: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -145,10 +145,11 @@ body {
 
 #wraper-solver > * {
   margin-top: 2rem;
-  margin-bottom: 4rem;
+  margin-bottom: 3.2rem;
 }
 
 #primary-buttons {
+  margin: 10px 10px 0;
   display: flex;
   justify-content: space-between;
 }
@@ -161,6 +162,7 @@ body {
   background-repeat: none;
   background-size: cover;
   height: 250px;
+  padding: 15px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -182,20 +184,19 @@ body {
   margin: 0;
 }
 
-#tempurature-level {
+#todays-tempurature-level {
   color: var(--primary-font-color);
   font-size: var(--very-large-font-size);
 }
 
 #weather-state,
-#celsius {
+#temp-level-metric {
   font-size: var(--med-font-size);
 }
 
-/* 
-#tempType {
-} 
-*/
+#temp-metrics-btn {
+  margin-right: 15px;
+}
 
 #days {
   display: flex;
@@ -225,10 +226,11 @@ body {
 .day-img {
   display: block;
   width: 50%;
+  height: 79px;
   /* height: 220px; */
 }
 
-.day-temp-min {
+.temp-metric-min {
   color: var(--secondary-font-color);
 }
 
@@ -236,7 +238,7 @@ body {
 /* Highlights */
 /*  */
 /* /* TODO: */
-.highlights {
+#highlights {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -314,7 +316,7 @@ highlight-2 {
   /* box-shadow: 0 0 2px #e76f51; */
 }
 
-.progress-bar {
+#progress-bar {
   color: white;
   font-family: sans-serif;
   background-color: var(--prg-bar);
@@ -324,9 +326,78 @@ highlight-2 {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: -50%;
+  /* left: -90%; */
   border-radius: inherit;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Search Bar */
+
+#x-btn,
+#search-location {
+  background: rgba(0, 0, 0, 0);
+  outline: 0;
+  border: 0;
+}
+
+#x-btn {
+  font-size: 25px;
+  position: relative;
+  left: 275px;
+}
+
+#search-bar {
+  background-color: var(--primary-dark-bleu);
+  padding: 10px 20px;
+  position: absolute;
+  left: -100%;
+  transition: left 0.4s ease-out;
+}
+
+#search-field > * {
+  display: inline-block;
+}
+
+#search-border {
+  border: 1px solid lightgray;
+  padding: 0 10px;
+}
+
+#search-location {
+  color: var(--primary-font-color);
+  padding: 1rem;
+}
+
+#btn-locationSearch {
+  background-color: dodgerblue;
+  transition: background-color 0.3s ease-in;
+}
+
+#cities-list {
+  padding: 0;
+  list-style: none;
+}
+
+#cities-list > * {
+  color: var(--secondary-font-color);
+  padding: 15px;
+  transition: background-color 0.2s ease-in, font-size 0.2s ease-in;
+}
+
+#btn-locationSearch:hover {
+  background-color: var(--primary-dark-bleu);
+}
+
+#x-btn:hover,
+#btn-locationSearch:hover,
+#cities-list > *:hover {
+  cursor: pointer;
+}
+
+#cities-list > *:hover {
+  /* color: black; */
+  font-size: 20px;
+  background-color: var(--neutral-dark-bleu);
 }

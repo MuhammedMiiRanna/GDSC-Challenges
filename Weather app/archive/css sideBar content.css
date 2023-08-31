@@ -1,0 +1,27 @@
+/* Basic styling for the whole page */
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Styling for the container using flexbox */
+  .container {
+    display: flex;
+    height: 100vh; /* Set the container height to full viewport height */
+  }
+  
+  /* Styling for the sidebar */
+  .sidebar {
+    width: 50%; /* Set the width of the sidebar */
+    background-color: lightgray;
+    flex-shrink: 0; /* Prevent the sidebar from shrinking */
+    overflow: auto; /* Allow scrolling in the sidebar if content overflows */
+  }
+  
+  /* Styling for the content area */
+  .content {
+    width: 50%; /* Set the width of the content area */
+    background-color: white;
+    overflow: auto; /* Allow scrolling in the content area if content overflows */
+  }
+  

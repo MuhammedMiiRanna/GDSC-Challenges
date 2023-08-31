@@ -23,8 +23,11 @@
 
 body {
   background-color: black;
+  font-size: 1.5rem;
   font-family: "Overpass", sans-serif;
-  font-size: 1.6rem;
+}
+
+main {
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -49,17 +52,19 @@ ul {
 /* MAIN CONTENT */
 
 .rating-card {
+  color: var(--light-grey);
   /* background: var(--very-dark); */
   background: radial-gradient(
     circle at top,
     var(--dark-blue),
     var(--very-dark)
   );
-  color: var(--light-grey);
-  padding: 3.5rem;
   width: 100%;
+  padding: 3.5rem;
+  margin: 20px;
   max-width: var(--max-card-width);
   border-radius: var(--border-radius-value);
+  flex-shrink: 1;
 }
 /* .rating-card p {
 } */
@@ -68,11 +73,18 @@ ul {
   margin: 2rem 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
-  /* text-align: center; */
+@media screen and (max-width: 375px) {
+  #rating {
+    justify-content: space-evenly;
+  }
 }
 
 .rating-items {
+  margin: 4px;
   transition: color 0.5s, background-color 0.5s;
   /* display: inline-block;
   vertical-align: middle;
