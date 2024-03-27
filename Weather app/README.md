@@ -38,19 +38,19 @@
 
 ## Overview
 
-![screenshot](screenshot\Desktop-1.png)
+![screenshot](screenshot/Desktop-1.png)
 
-![screenshot](screenshot\responsive-1.png)
+![screenshot](screenshot/responsive-1.png)
 
-![screenshot](screenshot\mobileView-1.png)
+![screenshot](screenshot/mobileView-1.png)
 
-![screenshot](screenshot\mobileView-2.png)
+![screenshot](screenshot/mobileView-2.png)
 
-![screenshot](screenshot\mobileView-3.png)
+![screenshot](screenshot/mobileView-3.png)
 
-![screenshot](screenshot\locationSearch-1.png)
+![screenshot](screenshot/locationSearch-1.png)
 
-![screenshot](screenshot\locationSearch-2.png)
+![screenshot](screenshot/locationSearch-2.png)
 
 ### Built With
 
